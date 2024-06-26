@@ -1,8 +1,9 @@
 import React from 'react';
 import { API_BASE_URL, USER } from '../../config/host-config';
-const Weather = () => {
+const weather = () => {
   const profileRequestURL = `${API_BASE_URL}${USER}/weather`;
-  return <div>날씨 api</div>;
+
+  return <div>weather</div>;
 };
 
-export default Weather;
+export default weather;
