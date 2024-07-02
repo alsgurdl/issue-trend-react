@@ -21,6 +21,7 @@ const KakaoLoginHandler = () => {
         regionName,
         nickname,
         userNo,
+        favoriteKeywords,
       } = await res.json();
       onLogin(
         token,
@@ -30,6 +31,7 @@ const KakaoLoginHandler = () => {
         regionName,
         nickname,
         userNo,
+        favoriteKeywords,
       );
       redirection('/home');
     };

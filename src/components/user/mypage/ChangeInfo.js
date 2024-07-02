@@ -199,26 +199,32 @@ const ChangeInfo = () => {
   };
 
   const pwCheckHandler = (e) => {
+    const loginPath = localStorage.getItem('LOGIN_PATH'); // 로그인 경로 가져오기
     let msg;
     let flag = false;
 
-    if (!e.target.value) {
-      msg = '비밀번호 확인란은 필수입니다.';
-    } else if (userValue.password1 !== e.target.value) {
-      msg = '입력한 비밀번호와 다릅니다.';
-    } else {
-      msg = '비밀번호가 일치합니다.';
+    // 로그인 경로가 'kakao'인 경우 비밀번호 확인 절차를 생략
+    if (loginPath === 'kakao') {
       flag = true;
+      msg = '카카오 로그인 사용자입니다. 비밀번호 확인이 필요 없습니다.';
+    } else {
+      if (!e.target.value) {
+        msg = '비밀번호 확인란은 필수입니다.';
+      } else if (userValue.password1 !== e.target.value) {
+        msg = '입력한 비밀번호와 다릅니다.';
+      } else {
+        msg = '비밀번호가 일치합니다.';
+        flag = true;
+      }
     }
 
     saveInputState({
       key: 'passwordCheck1',
-      inputValue: 'pass',
+      inputValue: 'pass', // 실제 비밀번호 값 대신 'pass' 문자열 저장
       msg,
       flag,
     });
   };
-
   // 지역설정
   async function getAddr(lat, lng) {
     let geocoder = new kakao.maps.services.Geocoder();
