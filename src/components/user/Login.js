@@ -20,6 +20,7 @@ import { KAKAO_AUTH_URL } from '../../config/Kakao-config';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
 import PasswordResetModal from './PasswordResetModal';
 import styles from '../../styles/user/Login.module.scss';
+import { NAVER_AUTH_URL } from '../../config/Naver-config';
 
 const { container, title, content, etcItem, signIn, findPassword } = styles;
 
@@ -201,6 +202,19 @@ const Login = () => {
                   style={{ width: '100%' }}
                   alt='kakaobtn'
                   src={require('../../assets/img/kakao_login_medium_wide.png')}
+                />
+              </a>
+            </Grid>
+            <Grid>
+              <a href={NAVER_AUTH_URL}>
+                <img
+                  style={{
+                    width: '400px',
+                    height: '70px',
+                    margin: '15px',
+                  }}
+                  alt='naverbtn'
+                  src={require('../../assets/img/naverLogin.png')}
                 />
               </a>
             </Grid>

@@ -4,8 +4,8 @@ let backEndHostName;
 
 if (clientHostName === 'localhost') {
   backEndHostName = 'http://localhost:8181';
-} else if (clientHostName === 'issuetrend.site') {
-  backEndHostName = 'https://3.38.47.22';
+} else if (clientHostName === 'spring.com') {
+  backEndHostName = 'https://api.spring.com';
 }
 
 export const API_BASE_URL = backEndHostName;
