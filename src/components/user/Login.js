@@ -21,6 +21,7 @@ import { Visibility, VisibilityOff } from '@mui/icons-material';
 import PasswordResetModal from './PasswordResetModal';
 import styles from '../../styles/user/Login.module.scss';
 import { NAVER_AUTH_URL } from '../../config/Naver-config';
+import { GOOGLE_AUTH_URL } from '../../config/google-config';
 
 const { container, title, content, etcItem, signIn, findPassword } = styles;
 
@@ -210,11 +211,24 @@ const Login = () => {
                 <img
                   style={{
                     width: '400px',
-                    height: '70px',
+                    height: '65px',
                     margin: '15px',
                   }}
                   alt='naverbtn'
                   src={require('../../assets/img/naverLogin.png')}
+                />
+              </a>
+            </Grid>
+            <Grid>
+              <a href={GOOGLE_AUTH_URL}>
+                <img
+                  style={{
+                    width: '400px',
+                    height: '70px',
+                    margin: '0px 15px',
+                  }}
+                  alt='naverbtn'
+                  src={require('../../assets/img/googlelogin.png')}
                 />
               </a>
             </Grid>
